@@ -10,18 +10,36 @@ public class Life extends Insurance {
 		this.monthlyCost = this.monthlyCost + (this.monthlyCost * this.lifeRate) + this.extraCharges;
 		
 	}
+	
+	
+
+	public double getLifeRate() {
+		return lifeRate;
+	}
+
+
+
+	public double getExtraCharges() {
+		return extraCharges;
+	}
+
+
 
 	@Override
 	public void setInsuranceCost(double newCost) {
 		
-		this.monthlyCost = newCost + (newCost * this.lifeRate) + this.extraCharges;
+		if(monthlyCost < 0.0)
+			throw new IllegalArgumentException("Monthly Cost must be greater than 0.0");
+		
+		this.monthlyCost = newCost + (newCost * getLifeRate()) + getExtraCharges();
 
 	}
 
 	@Override
 	public String displayInfo() {
 		
-		return String.format("%s: %s%n %s:%.2f", "Insurance Type", super.getTypeOfInsurance(), "Monthly Cost", super.getMonthlyCost());
+		return String.format("%s: %s%n%n %s: %.2f%n %s: %s%n %s: %s", "Insurance Type", super.getTypeOfInsurance(), "Monthly Cost", super.getMonthlyCost()
+				, "Life Insurance Rate: ", getLifeRate(), "Extra charges: ", getExtraCharges());
 
 	}
 

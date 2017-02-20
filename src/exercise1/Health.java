@@ -9,10 +9,19 @@ public class Health extends Insurance {
 		this.monthlyCost = this.monthlyCost + (this.monthlyCost * this.healthRate);
 		
 	}
+	
+
+	public double getHealthRate() {
+		return healthRate;
+	}
+
 
 	@Override
 	public void setInsuranceCost(double newCost) {
 	    
+		if(monthlyCost < 0.0)
+			throw new IllegalArgumentException("Monthly Cost must be greater than 0.0");
+		
 	 	this.monthlyCost = (newCost) + (newCost * this.healthRate);
 
 	}
@@ -20,7 +29,8 @@ public class Health extends Insurance {
 	@Override
 	public String displayInfo() {
 		
-		return String.format("%s: %s%n %s:%.2f", "Insurance Type", super.getTypeOfInsurance(), "Monthly Cost", super.getMonthlyCost());
+		return String.format("%s: %s%n%n %s:%.2f%n %s: %s", "Insurance Type", super.getTypeOfInsurance(), "Monthly Cost", super.getMonthlyCost()
+				, "Health Insurance Rate: ", getHealthRate());
 
 	}
 

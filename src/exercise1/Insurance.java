@@ -7,7 +7,10 @@ public abstract class Insurance {
 	
 	public Insurance(String typeOfInsurance, double monthlyCost){
 		
-		this.typeOfInsurance = typeOfInsurance;
+		if(monthlyCost < 0.0)
+			throw new IllegalArgumentException("Monthly Cost must be greater than 0.0");
+			
+	    this.typeOfInsurance = typeOfInsurance;
 		this.monthlyCost = monthlyCost;
 		
 	}
