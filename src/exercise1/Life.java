@@ -38,7 +38,7 @@ public class Life extends Insurance {
 	@Override
 	public String displayInfo() {
 		
-		return String.format("%s: %s%n%n %s: %.2f%n %s: %s%n %s: %s", "Insurance Type", super.getTypeOfInsurance(), "Monthly Cost", super.getMonthlyCost()
+		return String.format("%s: %s%n%n%s: %.2f%n%s: %s%n%s: %s", "Insurance Type", super.getTypeOfInsurance(), "Monthly Cost", super.getMonthlyCost()
 				, "Life Insurance Rate: ", getLifeRate(), "Extra charges: ", getExtraCharges());
 
 	}

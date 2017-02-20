@@ -29,7 +29,7 @@ public class Health extends Insurance {
 	@Override
 	public String displayInfo() {
 		
-		return String.format("%s: %s%n%n %s:%.2f%n %s: %s", "Insurance Type", super.getTypeOfInsurance(), "Monthly Cost", super.getMonthlyCost()
+		return String.format("%s: %s%n%n%s: %.2f%n%s: %s", "Insurance Type", super.getTypeOfInsurance(), "Monthly Cost", super.getMonthlyCost()
 				, "Health Insurance Rate: ", getHealthRate());
 
 	}
