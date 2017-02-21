@@ -2,7 +2,7 @@ package exercise2;
 
 public class FullTimeStudent extends Student {
 
-	private final double tuition = 2000;
+	private final int tuition = 2000;
 	
 	
 	public FullTimeStudent(String name, boolean status) {

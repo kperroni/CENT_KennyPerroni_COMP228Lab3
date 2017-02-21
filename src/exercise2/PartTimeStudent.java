@@ -3,7 +3,7 @@ package exercise2;
 public class PartTimeStudent extends Student {
 
 	private int creditHours;
-	private final double creditForHourPrice = 100;
+	private final int creditForHourPrice = 100;
 	
 	public PartTimeStudent(String name, boolean status, int creditHours) {
 		super(name, status);		
