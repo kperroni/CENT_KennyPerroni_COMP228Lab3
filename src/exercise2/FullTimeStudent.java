@@ -2,18 +2,22 @@ package exercise2;
 
 public class FullTimeStudent extends Student {
 
-	private final int tuition = 2000;
+	private final int tuition = 2000; //Constant value for tuition
 	
 	
-	public FullTimeStudent(String name, boolean status) {
-		super(name, status);
+	public FullTimeStudent(String name, boolean status) { //Constructor
+		super(name, status); //Super class constructor
 	}
 
+	//Overridden method calculateTuition
+	
 	@Override
 	public double calculateTuition() {
 		
 		return this.tuition;
 	}
+	
+	//Overridden method displayStudentInfo that returns a formatted string
 
 	@Override
 	public String displayStudentInfo() {
